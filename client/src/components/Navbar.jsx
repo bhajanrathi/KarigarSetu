@@ -3,39 +3,18 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { assets } from '../assets/assets_frontend/assets';
 const Navbar = () => {
 
-  const navigate = useNavigate();
-
-
   return (
-
-
-    <div className="flex items-center justify-between text-sm py-4 mb-5 border-b border-b-gray-400">
-      <ul className="hidden md:flex  gap-5 font-medium items-center">
-
-       <img src={assets.logo} alt=""  onClick={() => {
-          navigate("/");
-        }}
-        className="w-30" />
-
-        <NavLink to="/">
-          <li className="py-1">Home</li>
-          <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden" />
-        </NavLink>
-        <NavLink to="/doctors">
-          <li className="py-1">All Products</li>
-          <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto  hidden" />
-        </NavLink>
-        <NavLink to="/about">
-          <li className="py-1">About</li>
-          <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden" />
-        </NavLink>
-        <NavLink to="/contact">
-          <li className="py-1">Contact</li>
-          <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden" />
-        </NavLink>
-      </ul>
-    </div>
-  )
+    <header className="flex justify-between items-center p-4 shadow">
+    <img src={assets.logo} alt="logo" className='w-25'/>
+    <nav className="space-x-6 hidden md:flex">
+      <a href="#" className="hover:text-green-600">Home</a>
+      <a href="#" className="hover:text-green-600">About</a>
+      <a href="#" className="hover:text-green-600">Features</a>
+      <a href="#" className="hover:text-green-600">Contact</a>
+      <button className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Login</button>
+    </nav>
+  </header>
+  );
 }
 
 export default Navbar
